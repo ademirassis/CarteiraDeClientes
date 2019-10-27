@@ -72,11 +72,11 @@ public class CadastrarClienteActivity extends AppCompatActivity {
                     //else { }
 
         if(res){
-            AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-            dialog.setTitle(getString(R.string.title_aviso));
-            dialog.setMessage(getString(R.string.message_campos_invalidos_brancos));
-            dialog.setNeutralButton(getString(R.string.lbl_ok), null);
-            dialog.show();
+            AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+            dlg.setTitle(getString(R.string.title_aviso));
+            dlg.setMessage(getString(R.string.message_campos_invalidos_brancos));
+            dlg.setNeutralButton(getString(R.string.action_ok), null);
+            dlg.show();
         }
     }
 

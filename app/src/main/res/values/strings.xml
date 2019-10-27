@@ -10,5 +10,6 @@
     <string name="title_menu_cancelar">Cancelar</string>
     <string name="title_aviso">Aviso:</string>
     <string name="message_campos_invalidos_brancos">Há campos inválidos ou em branco!</string>
-    <string name="lbl_ok">OK</string>
+    <string name="action_ok">OK</string>
+    <string name="message_conexao_criada_sucesso">Conexão criada com sucessso!</string>
 </resources>
