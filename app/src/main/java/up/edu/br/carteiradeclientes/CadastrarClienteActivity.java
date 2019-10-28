@@ -52,6 +52,22 @@ public class CadastrarClienteActivity extends AppCompatActivity {
         layoutContentCadastrarCliente = (ConstraintLayout) findViewById(R.id.layoutContentCadastrarCliente);
 
         criarConexao();
+        verificaParametro();
+    }
+
+
+    private void verificaParametro(){
+
+        Bundle bundle = getIntent().getExtras();
+
+        if (bundle != null && bundle.containsKey("cliente")){
+
+            cliente = (Cliente) bundle.getSerializable("cliente");
+            editNome.setText(cliente.getNome());
+            editEndereco.setText(cliente.getEndereco());
+            editEmail.setText(cliente.getEmail());
+            editTelefone.setText(cliente.getTelefone());
+        }
     }
 
 

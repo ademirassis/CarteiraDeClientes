@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -78,14 +80,26 @@ public class MainActivity extends AppCompatActivity {
             dlg.setMessage(ex.getMessage());
             dlg.setNeutralButton("OK", null);
             dlg.show();
-
         }
-
     }
 
     public void cadastrar(View view){
         Intent it = new Intent(MainActivity.this, CadastrarClienteActivity.class);
-        startActivity(it);
+        //startActivity(it);
+        startActivityForResult(it, 0);
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 0){
+
+            List<Cliente> clientes = clienteRepositorio.listarClientes();
+            clienteAdapter = new ClienteAdapter(clientes);
+            listaDados.setAdapter(clienteAdapter);
+        }
+    }
+
+
 
 }

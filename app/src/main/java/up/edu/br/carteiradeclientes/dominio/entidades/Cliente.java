@@ -1,6 +1,8 @@
 package up.edu.br.carteiradeclientes.dominio.entidades;
 
-public class Cliente {
+import java.io.Serializable;
+
+public class Cliente implements Serializable {
 
     private int codigo;
     private String nome;
@@ -17,6 +19,7 @@ public class Cliente {
     }
 
     public Cliente(){
+        // codigo = 0;
 
     }
 
